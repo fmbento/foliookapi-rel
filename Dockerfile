@@ -16,10 +16,12 @@ WORKDIR /code
 
 RUN git clone --depth 1 --single-branch https://github.com/folio-org/okapi.git /code 
 
+RUN mvn install
+
 EXPOSE 9130
 EXPOSE 9131
 EXPOSE 9132
 EXPOSE 9133
 EXPOSE 9134
 
-CMD ["mvn", "install"]
+CMD ["mvn", "exec:exec"]
